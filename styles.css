@@ -3,26 +3,32 @@
   padding: 0;
 }
 
+body {
+  background-color: rgb(210, 217, 226);
+  font-family: "Roboto", sans-serif;
+}
+
 li {
   list-style: none;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: minmax(auto, 300px) 1fr;
+  grid-template-rows: 200px 1fr;
   gap: 4px;
-}
-.container .sidebar {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  display: grid;
-}
 
+  width: 100vw;
+  height: 100vh;
+}
+/* ---- Header Section  ----- */
 .container .header {
+  grid-area: 1 / 2 / 2 / 3;
   display: grid;
   grid-template-rows: 1fr 1fr;
-}
 
+  background-color: white;
+}
 .search-bar {
   flex: 1;
 }
@@ -30,7 +36,7 @@ input[type="search"] {
   padding: 5px;
   border-radius: 5px;
   border: none;
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(210, 217, 226);
   width: 80%;
   margin-left: 10px;
 }
@@ -38,4 +44,72 @@ input[type="search"] {
 .header .lower-header {
   display: flex;
   justify-content: space-around;
+}
+
+/* ----- Sidebar Section ------- */
+.container .sidebar {
+  grid-column: 1/ 2;
+  grid-row: span 2;
+  display: grid;
+  gap: 10px;
+
+  background-color: #0ea5e9;
+  color: white;
+}
+
+/* ------ Content Section ------- */
+.container .content {
+  grid-area: 2 / 2 / 3 / 3;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.content .projects {
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.projects h3 {
+  grid-column: span 2;
+}
+
+.projects .project-cards {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-template-rows: 20px 1fr 50px;
+  row-gap: 10px;
+  grid-auto-flow: column;
+
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.project-cards .card-line {
+  grid-area: 1 / 1 / -1 / 2;
+  background-color: orange;
+  width: 10px;
+  border-radius: 10px 0 0 10px;
+}
+.project-cards h4 {
+  margin-top: 20px;
+}
+
+.project-cards p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.project-cards p,
+.project-cards h4 {
+  margin-left: 15px;
+  margin-right: minmax(15px, 50px);
+}
+
+.project-cards .project-links {
+  justify-self: end;
+  margin-right: 30px;
 }
