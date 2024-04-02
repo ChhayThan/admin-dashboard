@@ -137,8 +137,13 @@ input[type="search"] {
   margin: 30px;
 }
 
+.main-links p {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
 #link-separactor {
-  height: 50px;
+  height: 30px;
 }
 
 /* ------ Content Section ------- */
