@@ -114,6 +114,7 @@ input[type="search"] {
   grid-area: "logo";
   margin-top: 20px;
   margin-left: 30px;
+  margin-right: 30px;
 
   display: flex;
   align-items: center;
@@ -126,9 +127,6 @@ input[type="search"] {
   mask: url(images/dash-logo_icon.svg) no-repeat center;
   width: 50px;
   height: 50px;
-}
-
-.logo h3 {
 }
 
 .sidebar .main-links {
@@ -167,7 +165,7 @@ input[type="search"] {
 
 .projects .project-cards {
   display: grid;
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 20px minmax(280px, 1fr);
   grid-template-rows: 20px 1fr 50px;
   row-gap: 10px;
   grid-auto-flow: column;
